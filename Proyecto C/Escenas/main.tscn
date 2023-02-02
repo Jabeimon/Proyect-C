@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Jugador1.gd" type="Script" id=1]
 [ext_resource path="res://SpritesMapa/background.png" type="Texture" id=2]
-[ext_resource path="res://Animaciones/animacion2.png.png" type="Texture" id=3]
+[ext_resource path="res://Animaciones/j1_corriendo.png" type="Texture" id=3]
+[ext_resource path="res://Animaciones/animacion1.png" type="Texture" id=4]
+[ext_resource path="res://Animaciones/J1_salto.png" type="Texture" id=5]
+[ext_resource path="res://Animaciones/J1_abajo.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 367.672, 7.64331 )
@@ -19,41 +22,547 @@ extents = Vector2( 111.638, 7.86624 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 254.741, 5.63694 )
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.5, 18.25 )
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 18.5, 7 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 10, 17.5 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "J1_corriendo"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "J1_cuerpotierra"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "J1_diagAbajo"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "J1_diagArriba"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "J1_haciaArriba"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "J1_idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "J1_salto"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 15 ) ]
+}
 
 [node name="main" type="Node"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 441, -21 )
+position = Vector2( 474, -63 )
 scale = Vector2( 1.16, 1.57 )
 texture = ExtResource( 2 )
 
-[node name="suelo" type="StaticBody2D" parent="Background"]
+[node name="suelo" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo1" type="CollisionShape2D" parent="Background/suelo"]
 position = Vector2( -1327.16, -9.55414 )
 shape = SubResource( 2 )
 
-[node name="suelo2" type="StaticBody2D" parent="Background"]
+[node name="suelo2" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo2"]
 position = Vector2( -752.155, -9.77707 )
 shape = SubResource( 3 )
 
-[node name="suelo3" type="StaticBody2D" parent="Background"]
+[node name="suelo3" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo3"]
 position = Vector2( -416.185, -10.7325 )
 shape = SubResource( 4 )
 
-[node name="suelo5" type="StaticBody2D" parent="Background"]
+[node name="suelo5" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo5"]
 position = Vector2( 239.655, -10.1911 )
 shape = SubResource( 5 )
 
-[node name="suelo4" type="StaticBody2D" parent="Background"]
+[node name="suelo4" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo4"]
 position = Vector2( -94.3965, -44.4904 )
@@ -62,9 +571,11 @@ shape = SubResource( 6 )
 [node name="Jugador1" type="Position2D" parent="."]
 position = Vector2( 228, 57 )
 script = ExtResource( 1 )
-GRAVEDAD = 5000.0
+GRAVEDAD = 10000.0
+VEL_MOVIMIENTO = 5000.0
+VEL_SALTO = 7000.0
 
-[node name="cuerpo_j1" type="KinematicBody2D" parent="Jugador1"]
+[node name="cuerpo_j1" type="KinematicBody2D" parent="Jugador1" groups=["player"]]
 position = Vector2( -1504, -168 )
 
 [node name="Sprite_J1" type="Sprite" parent="Jugador1/cuerpo_j1"]
@@ -72,11 +583,23 @@ position = Vector2( 0, 0.5 )
 scale = Vector2( 1, 0.97619 )
 texture = ExtResource( 3 )
 hframes = 5
+vframes = 3
 
 [node name="collision_j1" type="CollisionShape2D" parent="Jugador1/cuerpo_j1"]
-position = Vector2( 0, 0.75 )
-shape = SubResource( 1 )
+position = Vector2( 2, 2.5 )
+shape = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador1/cuerpo_j1"]
+position = Vector2( 0, -1 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
+
+[node name="animacion_J1" type="AnimationPlayer" parent="Jugador1"]
+anims/J1_corriendo = SubResource( 7 )
+anims/J1_cuerpotierra = SubResource( 14 )
+anims/J1_diagAbajo = SubResource( 11 )
+anims/J1_diagArriba = SubResource( 12 )
+anims/J1_haciaArriba = SubResource( 13 )
+anims/J1_idle = SubResource( 8 )
+anims/J1_salto = SubResource( 10 )
+anims/RESET = SubResource( 9 )
