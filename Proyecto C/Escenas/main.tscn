@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Jugador1.gd" type="Script" id=1]
 [ext_resource path="res://SpritesMapa/background.png" type="Texture" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Animaciones/animacion1.png" type="Texture" id=4]
 [ext_resource path="res://Animaciones/J1_salto.png" type="Texture" id=5]
 [ext_resource path="res://Animaciones/J1_abajo.png" type="Texture" id=6]
+[ext_resource path="res://Animaciones/J1_nadar.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 367.672, 7.64331 )
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 868.081, 4.36306 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 78.0173, 7.2293 )
@@ -19,11 +20,256 @@ extents = Vector2( 127.392, 7.54777 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 111.638, 7.86624 )
 
+[sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 366.638, 4.36306 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 46.1206, 6.05096 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 46.9829, 2.22932 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 30.6034, 7.86625 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 29.7414, 6.05096 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 31.2501, 6.91082 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 14.2241, 6.05096 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 13.3621, 6.05095 )
+
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 254.741, 5.63694 )
+extents = Vector2( 257.112, 5.63694 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 118.793, 7.85032 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 46.8102, 6.4172 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 14.2241, 6.36943 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 14.4828, 6.91083 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 61.8965, 7.86624 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 30.431, 7.11783 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 32.1551, 6.9586 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 47.7585, 6.57643 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 78.7068, 6.27388 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 31.7241, 6.27389 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 30.0862, 5.95541 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 31.2931, 6.91083 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 14.4827, 6.91083 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 14.4827, 5.89793 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 47.112, 6.79041 )
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 14.6552, 5.76831 )
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 30.5172, 5.68471 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 30, 6.59236 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 30.8621, 6.34554 )
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 30.8621, 5.63695 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 46.4439, 6.01712 )
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 15.431, 5.78822 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 80, 5.95542 )
+
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 32.1552, 6.27388 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 95.9483, 5.9554 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 32.1551, 6.27389 )
+
+[sub_resource type="RectangleShape2D" id=57]
+extents = Vector2( 112.328, 5.63694 )
+
+[sub_resource type="RectangleShape2D" id=58]
+extents = Vector2( 31.1638, 5.95542 )
+
+[sub_resource type="RectangleShape2D" id=59]
+extents = Vector2( 45.6897, 5.414 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 18.5, 7 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 11, 9.5 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "J1_agua"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 18 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 9.5, 5.75 )
+
+[sub_resource type="Animation" id=21]
+resource_name = "J1_bajoagua"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 20 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 10, 17.5 )
@@ -415,6 +661,73 @@ tracks/4/keys = {
 "values": [ SubResource( 16 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 10, 8 )
+
+[sub_resource type="Animation" id=23]
+resource_name = "J1_nadando"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cuerpo_j1/Sprite_J1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cuerpo_j1/Sprite_J1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cuerpo_j1/Sprite_J1:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cuerpo_j1/Sprite_J1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cuerpo_j1/collision_j1:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 22 ) ]
+}
+
 [sub_resource type="Animation" id=10]
 resource_name = "J1_salto"
 length = 0.4
@@ -534,44 +847,303 @@ tracks/4/keys = {
 [node name="main" type="Node"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 474, -63 )
+position = Vector2( 480, 1 )
 scale = Vector2( 1.16, 1.57 )
 texture = ExtResource( 2 )
 
-[node name="suelo" type="StaticBody2D" parent="Background" groups=["suelo"]]
+[node name="agua1" type="StaticBody2D" parent="Background" groups=["agua", "suelo"]]
 
-[node name="suelo1" type="CollisionShape2D" parent="Background/suelo"]
-position = Vector2( -1327.16, -9.55414 )
-shape = SubResource( 2 )
+[node name="agua" type="CollisionShape2D" parent="Background/agua1"]
+position = Vector2( -861.184, 97.3567 )
+shape = SubResource( 17 )
 
 [node name="suelo2" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo2"]
 position = Vector2( -752.155, -9.77707 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="suelo3" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo3"]
 position = Vector2( -416.185, -10.7325 )
 shape = SubResource( 4 )
+one_way_collision = true
 
 [node name="suelo5" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo5"]
 position = Vector2( 239.655, -10.1911 )
 shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="suelo42" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo42"]
+position = Vector2( -1329.57, -10.7325 )
+shape = SubResource( 60 )
+one_way_collision = true
+
+[node name="suelo7" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo7"]
+position = Vector2( -1521.98, 23.8854 )
+shape = SubResource( 24 )
+one_way_collision = true
+
+[node name="suelo13" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo13"]
+position = Vector2( -1040.95, 41.0828 )
+shape = SubResource( 25 )
+one_way_collision = true
+
+[node name="suelo12" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo12"]
+position = Vector2( -1088.79, 88.535 )
+shape = SubResource( 26 )
+
+[node name="suelo11" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo11"]
+position = Vector2( -1280.6, 22.6115 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="suelo10" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo10"]
+position = Vector2( -1408.41, 87.8981 )
+shape = SubResource( 28 )
+
+[node name="suelo9" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo9"]
+position = Vector2( -1456.9, 54.1401 )
+shape = SubResource( 29 )
+one_way_collision = true
+
+[node name="suelo8" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo8"]
+position = Vector2( -1362.93, 53.5032 )
+shape = SubResource( 30 )
+one_way_collision = true
+
+[node name="suelo6" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo6"]
+position = Vector2( -94.3965, -44.4904 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="suelo41" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo41"]
+position = Vector2( 1527.59, 87.2611 )
+shape = SubResource( 31 )
+one_way_collision = true
+
+[node name="suelo40" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo40"]
+position = Vector2( 1487.93, 38.2166 )
+shape = SubResource( 32 )
+one_way_collision = true
+
+[node name="suelo39" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo39"]
+position = Vector2( 1552.16, 21.6561 )
+shape = SubResource( 33 )
+one_way_collision = true
+
+[node name="suelo38" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo38"]
+position = Vector2( 1584.48, 54.1401 )
+shape = SubResource( 34 )
+one_way_collision = true
+
+[node name="suelo37" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo37"]
+position = Vector2( 1472.41, -7.64331 )
+shape = SubResource( 35 )
+one_way_collision = true
+
+[node name="suelo36" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo36"]
+position = Vector2( 1375, 24.2038 )
+shape = SubResource( 36 )
+one_way_collision = true
+
+[node name="suelo35" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo35"]
+position = Vector2( 1280.17, 54.7771 )
+shape = SubResource( 37 )
+one_way_collision = true
+
+[node name="suelo34" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo34"]
+position = Vector2( 1167.24, 85.9873 )
+shape = SubResource( 38 )
+one_way_collision = true
+
+[node name="suelo33" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo33"]
+position = Vector2( 1103.45, 22.9299 )
+shape = SubResource( 39 )
+one_way_collision = true
+
+[node name="suelo32" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo32"]
+position = Vector2( 1024.31, -10.0955 )
+shape = SubResource( 40 )
+one_way_collision = true
+
+[node name="suelo31" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo31"]
+position = Vector2( 928.535, -42.6752 )
+shape = SubResource( 41 )
+one_way_collision = true
+
+[node name="suelo30" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo30"]
+position = Vector2( 894.828, -9.55414 )
+shape = SubResource( 42 )
+one_way_collision = true
+
+[node name="suelo29" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo29"]
+position = Vector2( 944.138, 40.2229 )
+shape = SubResource( 43 )
+one_way_collision = true
+
+[node name="suelo28" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo28"]
+position = Vector2( 911.207, 85.9873 )
+shape = SubResource( 44 )
+one_way_collision = true
+
+[node name="suelo27" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo27"]
+position = Vector2( 815.819, 54.993 )
+shape = SubResource( 45 )
+one_way_collision = true
+
+[node name="suelo26" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo26"]
+position = Vector2( 751.724, 85.9514 )
+shape = SubResource( 46 )
+one_way_collision = true
+
+[node name="suelo25" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo25"]
+position = Vector2( 767.759, 22.3408 )
+shape = SubResource( 47 )
+one_way_collision = true
+
+[node name="suelo24" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo24"]
+position = Vector2( 672.414, -8.9172 )
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="suelo23" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo23"]
+position = Vector2( 638.793, 22.9299 )
+shape = SubResource( 49 )
+one_way_collision = true
+
+[node name="suelo22" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo22"]
+position = Vector2( 544.138, -10.0955 )
+shape = SubResource( 50 )
+one_way_collision = true
+
+[node name="suelo21" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo21"]
+position = Vector2( 495.69, 22.9299 )
+shape = SubResource( 51 )
+one_way_collision = true
+
+[node name="suelo20" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo20"]
+position = Vector2( 400.086, 38.2723 )
+shape = SubResource( 52 )
+one_way_collision = true
+
+[node name="suelo19" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo19"]
+position = Vector2( 399.138, -41.4013 )
+shape = SubResource( 53 )
+one_way_collision = true
+
+[node name="suelo18" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo18"]
+position = Vector2( 319.569, 54.8726 )
+shape = SubResource( 54 )
+one_way_collision = true
+
+[node name="suelo17" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo17"]
+position = Vector2( 96.5518, 86.6242 )
+shape = SubResource( 55 )
+
+[node name="suelo16" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo16"]
+position = Vector2( 223.276, 54.7771 )
+shape = SubResource( 56 )
+one_way_collision = true
+
+[node name="suelo15" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo15"]
+position = Vector2( -16.6379, 21.7516 )
+shape = SubResource( 57 )
+one_way_collision = true
+
+[node name="suelo14" type="StaticBody2D" parent="Background" groups=["suelo"]]
+
+[node name="suelo2" type="CollisionShape2D" parent="Background/suelo14"]
+position = Vector2( -191.379, 38.2166 )
+shape = SubResource( 58 )
+one_way_collision = true
 
 [node name="suelo4" type="StaticBody2D" parent="Background" groups=["suelo"]]
 
 [node name="suelo2" type="CollisionShape2D" parent="Background/suelo4"]
-position = Vector2( -94.3965, -44.4904 )
-shape = SubResource( 6 )
+position = Vector2( -271.552, 87.5796 )
+shape = SubResource( 59 )
 
 [node name="Jugador1" type="Position2D" parent="."]
 position = Vector2( 228, 57 )
 script = ExtResource( 1 )
-GRAVEDAD = 10000.0
+GRAVEDAD = 6000.0
 VEL_MOVIMIENTO = 5000.0
 VEL_SALTO = 7000.0
 
@@ -586,20 +1158,23 @@ hframes = 5
 vframes = 3
 
 [node name="collision_j1" type="CollisionShape2D" parent="Jugador1/cuerpo_j1"]
-position = Vector2( 2, 2.5 )
+position = Vector2( 0.5, 3.75 )
 shape = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador1/cuerpo_j1"]
-position = Vector2( 0, -1 )
+position = Vector2( -1, 2 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 
 [node name="animacion_J1" type="AnimationPlayer" parent="Jugador1"]
+anims/J1_agua = SubResource( 19 )
+anims/J1_bajoagua = SubResource( 21 )
 anims/J1_corriendo = SubResource( 7 )
 anims/J1_cuerpotierra = SubResource( 14 )
 anims/J1_diagAbajo = SubResource( 11 )
 anims/J1_diagArriba = SubResource( 12 )
 anims/J1_haciaArriba = SubResource( 13 )
 anims/J1_idle = SubResource( 8 )
+anims/J1_nadando = SubResource( 23 )
 anims/J1_salto = SubResource( 10 )
 anims/RESET = SubResource( 9 )
