@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Animaciones/proyectiles.png" type="Texture" id=1]
+[ext_resource path="res://Escenas/cuerpoBala.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 4.5, 4.5 )
 
 [node name="cuerpoBala" type="KinematicBody2D"]
 position = Vector2( -1421, 126 )
+script = ExtResource( 2 )
+potencia = 20000
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -4.76837e-07 )
@@ -18,3 +21,9 @@ frame = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, 0.5 )
 shape = SubResource( 62 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.500012, 0.5 )
+scale = Vector2( 0.450001, 0.45 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

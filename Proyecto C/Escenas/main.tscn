@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Jugador1.gd" type="Script" id=1]
 [ext_resource path="res://SpritesMapa/background.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Animaciones/J1_abajo.png" type="Texture" id=6]
 [ext_resource path="res://Animaciones/J1_nadar.png" type="Texture" id=7]
 [ext_resource path="res://Escenas/cuerpoBala.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Animaciones/Enemigos.png" type="Texture" id=9]
+[ext_resource path="res://Escenas/EnemigoBase.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 868.081, 4.36306 )
@@ -848,10 +850,62 @@ tracks/4/keys = {
 "values": [ SubResource( 15 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 11, 17.5 )
+
+[sub_resource type="Animation" id=63]
+resource_name = "Enem_jump"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "Enem_run"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=65]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [node name="main" type="Node" groups=["main"]]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 467, 13 )
+position = Vector2( 494, 9 )
 scale = Vector2( 1.16, 1.57 )
 texture = ExtResource( 2 )
 
@@ -1184,6 +1238,10 @@ zoom = Vector2( 0.4, 0.4 )
 [node name="SpawnBala" type="Position2D" parent="Jugador1/cuerpo_j1"]
 position = Vector2( -21, 1 )
 
+[node name="tmr_cooldown" type="Timer" parent="Jugador1/cuerpo_j1"]
+wait_time = 0.2
+one_shot = true
+
 [node name="animacion_J1" type="AnimationPlayer" parent="Jugador1"]
 anims/J1_agua = SubResource( 19 )
 anims/J1_bajoagua = SubResource( 21 )
@@ -1196,3 +1254,27 @@ anims/J1_idle = SubResource( 8 )
 anims/J1_nadando = SubResource( 23 )
 anims/J1_salto = SubResource( 10 )
 anims/RESET = SubResource( 9 )
+
+[node name="EnemigoBase" type="KinematicBody2D" parent="."]
+position = Vector2( -1143, -48 )
+script = ExtResource( 10 )
+GRAVEDAD = 6000.0
+VEL_MOVIMIENTO = 5000.0
+VEL_SALTO = 1500.0
+
+[node name="Sprite" type="Sprite" parent="EnemigoBase"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 9 )
+hframes = 3
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemigoBase"]
+position = Vector2( -1, 0.5 )
+shape = SubResource( 62 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnemigoBase"]
+anims/Enem_jump = SubResource( 63 )
+anims/Enem_run = SubResource( 64 )
+anims/RESET = SubResource( 65 )
+
+[connection signal="timeout" from="Jugador1/cuerpo_j1/tmr_cooldown" to="Jugador1" method="_on_tmr_cooldown_timeout"]
